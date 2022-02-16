@@ -18,10 +18,11 @@ import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static com.mycompany.app.utils.Constanse.PORT;
+
 public class ClockFrame extends javax.swing.JFrame {
     static Thread t;
 
-    int port = 3124;
     InetAddress host;
      
     Socket cs;
@@ -313,7 +314,7 @@ public class ClockFrame extends javax.swing.JFrame {
                  Logger.getLogger(ClockFrame.class.getName()).log(Level.SEVERE, null, ex);
              }
 
-             cs = new Socket(host, port);
+             cs = new Socket(host, PORT);
              os = cs.getOutputStream();
              dos = new DataOutputStream(os);
              //клиент присылает сообщение и его надо отобразить
